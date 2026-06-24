@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home - Study Tracker</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/home.css" />
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="navbar__logo">StudyTracker</div>
+    <ul class="navbar__links">
+      <li><a href="index.html" class="navbar__link navbar__link--active">Home</a></li>
+      <li><a href="materials.html" class="navbar__link">Materials</a></li>
+      <li><a href="tracker.html" class="navbar__link">Tracker</a></li>
+      <li><a href="dashboard.html" class="navbar__link">Dashboard</a></li>
+      <li><a href="tasks.html" class="navbar__link">Tasks</a></li>
+      <li><a href="notes.html" class="navbar__link">Notes</a></li>
+      <li><a href="pomodoro.html" class="navbar__link">🍅 Pomodoro</a></li>
+    </ul>
+    <div class="navbar__actions">
+      <button id="theme-toggle-btn" class="navbar__theme-btn" title="Toggle theme">🌙</button>
+    </div>
+  </nav>
+
+  <div class="page-wrapper">
+
+    <section id="home-view" class="page-section">
+      <div class="page-section__container">
+
+        <form class="form-section" id="materials-form">
+          <div class="form-section__row">
+
+            <div class="form-section__left">
+              <div class="form-group">
+                <label for="class-level" class="form-group__label">Class Level</label>
+                <select id="class-level" class="form-group__input form-group__input--select">
+                  <option value="1">First Year</option>
+                  <option value="2">Second Year</option>
+                  <option value="3">Third Year</option>
+                  <option value="4">Fourth Year</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="semester" class="form-group__label">Semester</label>
+                <select id="semester" class="form-group__input form-group__input--select">
+                  <option id="semester1" value="1">Semester 1</option>
+                  <option id="semester2" value="2">Semester 2</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="subject-name" class="form-group__label">Subject Name</label>
+                <input type="text" id="subject-name" class="form-group__input" placeholder="Enter subject name" />
+              </div>
+            </div>
+
+            <div class="form-section__right">
+              <img src="Assets/img.webp" alt="Materials illustration" class="form-section__image" />
+            </div>
+
+          </div>
+
+          <div class="form-section__actions">
+            <button type="button" id="add-subject-btn" class="btn btn--primary">Add Subject</button>
+          </div>
+        </form>
+
+      </div>
+    </section>
+
+  </div>
+
+  <footer class="footer">
+    <p class="footer__text">Study Tracker &copy; 2026</p>
+  </footer>
+
+  <script src="JS/modules/main.js"></script>
+  <script src="JS/modules/home.js"></script>
+
+</body>
+</html>

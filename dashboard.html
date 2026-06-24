@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard - Study Tracker</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/dashboard.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="navbar__logo">StudyTracker</div>
+    <ul class="navbar__links">
+      <li><a href="index.html" class="navbar__link">Home</a></li>
+      <li><a href="materials.html" class="navbar__link">Materials</a></li>
+      <li><a href="tracker.html" class="navbar__link">Tracker</a></li>
+      <li><a href="dashboard.html" class="navbar__link navbar__link--active">Dashboard</a></li>
+      <li><a href="tasks.html" class="navbar__link">Tasks</a></li>
+      <li><a href="notes.html" class="navbar__link">Notes</a></li>
+      <li><a href="pomodoro.html" class="navbar__link">🍅 Pomodoro</a></li>
+    </ul>
+    <div class="navbar__actions">
+      <button id="theme-toggle-btn" class="navbar__theme-btn" title="Toggle theme">🌙</button>
+    </div>
+  </nav>
+
+  <div class="page-wrapper">
+
+    <section id="dashboard-view" class="page-section">
+      <div class="page-section__container">
+
+        <div class="dashboard-header">
+          <h1 class="page-section__title">Student Dashboard</h1>
+          <button id="export-pdf-btn" class="btn btn--secondary btn--small no-print">📄 Export PDF</button>
+        </div>
+
+        <div id="overall-performance-section" class="dashboard-section">
+          <h2 class="dashboard-section__title">Overall Performance</h2>
+          <div id="overall-performance-value" class="performance-display">0%</div>
+          <div class="progress-bar">
+            <div id="overall-performance-bar" class="progress-bar__fill"></div>
+          </div>
+        </div>
+
+        <div id="subjects-overview-section" class="dashboard-section">
+          <h2 class="dashboard-section__title">Subjects Overview</h2>
+          <div id="subjects-overview-container" class="items-container"></div>
+        </div>
+
+        <div id="insights-section" class="dashboard-section dashboard-section--grid">
+          <h2 class="dashboard-section__title dashboard-section__title--full">Insights</h2>
+          <div id="strongest-subject-card" class="insight-card">
+            <h3 class="insight-card__title">Strongest Subject</h3>
+            <p id="strongest-subject-name" class="insight-card__value">No Data</p>
+            <span id="strongest-subject-percent" class="insight-card__percent">0%</span>
+          </div>
+          <div id="weakest-subject-card" class="insight-card">
+            <h3 class="insight-card__title">Weakest Subject</h3>
+            <p id="weakest-subject-name" class="insight-card__value">No Data</p>
+            <span id="weakest-subject-percent" class="insight-card__percent">0%</span>
+          </div>
+        </div>
+
+        <div id="lecture-analysis-section" class="dashboard-section">
+          <h2 class="dashboard-section__title">Lecture Analysis</h2>
+          <div id="lecture-analysis-container" class="items-container"></div>
+        </div>
+
+        <div id="chart-section" class="dashboard-section">
+          <h2 class="dashboard-section__title">Performance Chart</h2>
+          <canvas id="subjects-chart" class="chart-canvas"></canvas>
+        </div>
+
+      </div>
+    </section>
+
+  </div>
+
+  <footer class="footer">
+    <p class="footer__text">Study Tracker &copy; 2026</p>
+  </footer>
+
+  <script src="JS/modules/main.js"></script>
+  <script src="JS/modules/tracker.js"></script>
+  <script src="JS/modules/dashboard.js"></script>
+
+</body>
+</html>

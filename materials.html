@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Materials - Study Tracker</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/materials.css" />
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="navbar__logo">StudyTracker</div>
+    <ul class="navbar__links">
+      <li><a href="index.html" class="navbar__link">Home</a></li>
+      <li><a href="materials.html" class="navbar__link navbar__link--active">Materials</a></li>
+      <li><a href="tracker.html" class="navbar__link">Tracker</a></li>
+      <li><a href="dashboard.html" class="navbar__link">Dashboard</a></li>
+      <li><a href="tasks.html" class="navbar__link">Tasks</a></li>
+      <li><a href="notes.html" class="navbar__link">Notes</a></li>
+      <li><a href="pomodoro.html" class="navbar__link">🍅 Pomodoro</a></li>
+    </ul>
+    <div class="navbar__actions">
+      <button id="theme-toggle-btn" class="navbar__theme-btn" title="Toggle theme">🌙</button>
+    </div>
+  </nav>
+
+  <div class="page-wrapper">
+
+    <!-- Subjects List View -->
+    <section id="materials-view" class="page-section">
+      <div class="page-section__container">
+        <div id="subjects-container" class="items-container"></div>
+      </div>
+    </section>
+
+    <!-- Subject Details (Folders) View -->
+    <section id="subject-details-view" class="page-section" style="display: none;">
+      <div class="page-section__container">
+        <button id="back-to-materials-btn" class="btn btn--secondary btn--small">← Back</button>
+        <h2 id="subject-title" class="page-section__title"></h2>
+        <div id="folders-container" class="items-container"></div>
+        <div class="form-section form-section--inline">
+          <input type="text" id="folder-name-input" class="form-group__input" placeholder="New Folder Name" />
+          <button id="add-folder-btn" class="btn btn--primary">Add Folder</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Folder (Files) View -->
+    <section id="folder-view" class="page-section" style="display: none;">
+      <div class="page-section__container">
+        <button id="back-to-subject-btn" class="btn btn--secondary btn--small">← Back</button>
+        <h2 id="folder-title" class="page-section__title"></h2>
+        <div id="files-container" class="items-container"></div>
+        <div class="form-section form-section--inline">
+          <input type="text" id="file-name-input" class="form-group__input" placeholder="File Name" />
+          <input type="text" id="file-link-input" class="form-group__input" placeholder="https://drive.google.com/..." />
+          <button id="add-file-btn" class="btn btn--primary">Add File</button>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <footer class="footer">
+    <p class="footer__text">Study Tracker &copy; 2026</p>
+  </footer>
+
+  <script src="JS/modules/main.js"></script>
+  <script src="JS/modules/materials.js"></script>
+
+</body>
+</html>

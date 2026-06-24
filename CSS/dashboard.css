@@ -1,0 +1,341 @@
+/* =====================================================================
+   DASHBOARD.CSS
+   ===================================================================== */
+
+#dashboard-view {
+  min-height: calc(100vh - 60px - 80px);
+}
+
+/* =====================================================================
+   DASHBOARD SECTION
+   ===================================================================== */
+.dashboard-section {
+  background: linear-gradient(135deg, var(--color-card-bg) 0%, var(--color-gray-lighter) 100%);
+  border: 2px solid var(--color-border-light);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+  margin-bottom: var(--spacing-xl);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-base);
+  animation: slideUp 0.5s var(--transition-base);
+}
+
+.dashboard-section:hover {
+  box-shadow: 0 12px 40px rgba(0, 180, 216, 0.15);
+  border-color: var(--color-accent-light);
+}
+
+.dashboard-section__title {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-dark);
+  margin: 0 0 var(--spacing-lg) 0;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  position: relative;
+  padding-left: var(--spacing-lg);
+}
+
+.dashboard-section__title::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 4px;
+  height: 24px;
+  background: linear-gradient(180deg, var(--color-accent), var(--color-accent-hover));
+  border-radius: 2px;
+}
+
+.dashboard-section__title--full {
+  grid-column: 1 / -1;
+}
+
+/* =====================================================================
+   OVERALL PERFORMANCE
+   ===================================================================== */
+#overall-performance-section {
+  background: linear-gradient(135deg, var(--color-accent-light) 0%, var(--color-card-bg) 100%);
+  border: 2px solid var(--color-accent-light);
+}
+
+.performance-display {
+  font-size: 4rem;
+  font-weight: var(--font-weight-bold);
+  text-align: center;
+  background: linear-gradient(135deg, var(--color-accent), var(--color-accent-hover));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: var(--spacing-lg) 0;
+  font-variant-numeric: tabular-nums;
+  animation: glow 3s infinite;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 12px;
+  background-color: var(--color-border-light);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  position: relative;
+}
+
+.progress-bar::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  animation: shimmer 2s infinite;
+}
+
+.progress-bar__fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--color-accent), #00D4FF);
+  border-radius: var(--radius-lg);
+  transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 0 20px rgba(0, 180, 216, 0.6);
+  position: relative;
+}
+
+/* =====================================================================
+   SUBJECTS OVERVIEW
+   ===================================================================== */
+#subjects-overview-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: var(--spacing-lg);
+}
+
+.subject-overview-card {
+  background: var(--color-card-bg);
+  border: 2px solid var(--color-border-light);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-md);
+  text-align: center;
+  transition: all var(--transition-base);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.subject-overview-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 32px rgba(0, 180, 216, 0.2);
+  border-color: var(--color-accent);
+}
+
+.subject-overview-card__name {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-dark);
+  margin: 0 0 var(--spacing-sm) 0;
+}
+
+.subject-overview-card__percentage {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  background: linear-gradient(135deg, var(--color-accent), var(--color-accent-hover));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: var(--spacing-sm);
+}
+
+.subject-overview-card__bar {
+  width: 100%;
+  height: 6px;
+  background-color: var(--color-border-light);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+.subject-overview-card__bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--color-accent), var(--color-accent-hover));
+  border-radius: var(--radius-sm);
+  transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* =====================================================================
+   INSIGHTS
+   ===================================================================== */
+#insights-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: var(--spacing-lg);
+}
+
+.insight-card {
+  background: var(--color-card-bg);
+  border: 2px solid var(--color-border-light);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  transition: all var(--transition-base);
+}
+
+.insight-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--color-accent), transparent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--transition-base);
+}
+
+.insight-card:hover {
+  box-shadow: 0 12px 40px rgba(0, 180, 216, 0.15);
+  transform: translateY(-4px);
+  border-color: var(--color-accent);
+}
+
+.insight-card:hover::before { transform: scaleX(1); }
+
+.insight-card__title {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: var(--color-text-muted);
+  margin: 0 0 var(--spacing-md) 0;
+}
+
+.insight-card__value {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-dark);
+  margin-bottom: var(--spacing-md);
+  word-break: break-word;
+}
+
+.insight-card__percent {
+  display: inline-block;
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  color: white;
+  background: linear-gradient(135deg, var(--color-accent), var(--color-accent-hover));
+  padding: var(--spacing-sm) var(--spacing-lg);
+  border-radius: var(--radius-md);
+  box-shadow: 0 4px 12px rgba(0, 180, 216, 0.3);
+  animation: glow 3s infinite;
+}
+
+/* =====================================================================
+   LECTURE ANALYSIS
+   ===================================================================== */
+#lecture-analysis-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-md);
+}
+
+.lecture-item {
+  background: var(--color-card-bg);
+  border: 2px solid var(--color-border-light);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-md);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  transition: all var(--transition-base);
+  position: relative;
+  overflow: hidden;
+}
+
+.lecture-item::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 4px;
+  background: linear-gradient(180deg, var(--color-accent), var(--color-accent-hover));
+  transform: scaleY(0);
+  transform-origin: center;
+  transition: transform var(--transition-base);
+}
+
+.lecture-item:hover {
+  border-color: var(--color-accent);
+  box-shadow: 0 6px 16px rgba(0, 180, 216, 0.2);
+}
+
+.lecture-item:hover::before { transform: scaleY(1); }
+
+.lecture-item__number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  border-radius: var(--radius-md);
+  background: linear-gradient(135deg, var(--color-accent), var(--color-accent-hover));
+  color: var(--color-primary);
+  font-weight: var(--font-weight-bold);
+  flex-shrink: 0;
+}
+
+.lecture-item__details { flex: 1; }
+
+.lecture-item__title {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-dark);
+  margin: 0;
+}
+
+.lecture-item__meta {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+}
+
+.lecture-item__score {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  background: linear-gradient(135deg, var(--color-accent), var(--color-accent-hover));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* =====================================================================
+   CHART SECTION
+   ===================================================================== */
+.chart-canvas {
+  max-width: 100%;
+  height: auto;
+  margin: var(--spacing-lg) 0;
+}
+
+/* =====================================================================
+   DASHBOARD GRID
+   ===================================================================== */
+.dashboard-section--grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: var(--spacing-lg);
+}
+
+/* =====================================================================
+   RESPONSIVE
+   ===================================================================== */
+@media (max-width: 768px) {
+  .performance-display { font-size: 2.5rem; }
+  #subjects-overview-container { grid-template-columns: repeat(2, 1fr); }
+  .dashboard-section--grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 480px) {
+  .dashboard-section { padding: var(--spacing-md); margin-bottom: var(--spacing-lg); }
+  .dashboard-section__title { font-size: var(--font-size-lg); margin-bottom: var(--spacing-md); padding-left: var(--spacing-md); }
+  .performance-display { font-size: 2rem; margin: var(--spacing-md) 0; }
+  .progress-bar { height: 10px; }
+  #subjects-overview-container { grid-template-columns: 1fr; }
+  .insight-card { padding: var(--spacing-md); }
+  .insight-card__percent { font-size: var(--font-size-xl); padding: var(--spacing-xs) var(--spacing-sm); }
+  .lecture-item { flex-wrap: wrap; gap: var(--spacing-sm); }
+  .lecture-item__number { width: 40px; height: 40px; }
+}

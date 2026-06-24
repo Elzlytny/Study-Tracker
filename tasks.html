@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tasks - Study Tracker</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/tasks.css" />
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="navbar__logo">StudyTracker</div>
+    <ul class="navbar__links">
+      <li><a href="index.html" class="navbar__link">Home</a></li>
+      <li><a href="materials.html" class="navbar__link">Materials</a></li>
+      <li><a href="tracker.html" class="navbar__link">Tracker</a></li>
+      <li><a href="dashboard.html" class="navbar__link">Dashboard</a></li>
+      <li><a href="tasks.html" class="navbar__link navbar__link--active">Tasks</a></li>
+      <li><a href="notes.html" class="navbar__link">Notes</a></li>
+      <li><a href="pomodoro.html" class="navbar__link">🍅 Pomodoro</a></li>
+    </ul>
+    <div class="navbar__actions">
+      <button id="theme-toggle-btn" class="navbar__theme-btn" title="Toggle theme">🌙</button>
+    </div>
+  </nav>
+
+  <div class="page-wrapper">
+
+    <section id="tasks-view" class="page-section">
+      <div class="page-section__container">
+
+        <h1 class="page-section__title">Task Manager</h1>
+
+        <div class="filter-group">
+          <button class="filter-group__btn filter-group__btn--active" data-filter="all">All</button>
+          <button class="filter-group__btn" data-filter="pending">Pending</button>
+          <button class="filter-group__btn" data-filter="done">Done</button>
+        </div>
+
+        <form id="task-form" class="form-section">
+          <div class="form-group">
+            <label for="task-title" class="form-group__label">Task Title</label>
+            <input type="text" id="task-title" class="form-group__input" placeholder="Enter task title" />
+          </div>
+
+          <div class="form-group">
+            <label for="task-date" class="form-group__label">Date</label>
+            <input type="date" id="task-date" class="form-group__input" />
+          </div>
+
+          <div class="form-group">
+            <label for="task-priority" class="form-group__label">Priority</label>
+            <select id="task-priority" class="form-group__input form-group__input--select">
+              <option value="low">Low Priority</option>
+              <option value="medium">Medium Priority</option>
+              <option value="high">High Priority</option>
+            </select>
+          </div>
+
+          <div class="form-section__actions">
+            <button type="submit" class="btn btn--primary">Add Task</button>
+          </div>
+        </form>
+
+        <div id="tasks-list-container" class="items-container"></div>
+
+      </div>
+    </section>
+
+  </div>
+
+  <footer class="footer">
+    <p class="footer__text">Study Tracker &copy; 2026</p>
+  </footer>
+
+  <script src="JS/modules/main.js"></script>
+  <script src="JS/modules/tasks.js"></script>
+
+</body>
+</html>

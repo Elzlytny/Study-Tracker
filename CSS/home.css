@@ -1,0 +1,106 @@
+/* =====================================================================
+   HOME.CSS
+   ===================================================================== */
+
+#home-view { min-height: calc(100vh - 60px - 80px); }
+
+#materials-form {
+  background: linear-gradient(135deg, var(--color-card-bg) 0%, var(--color-gray-lighter) 100%);
+  border: 2px solid var(--color-border-light);
+  padding: var(--spacing-lg);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  margin-bottom: var(--spacing-xl);
+  transition: all var(--transition-base);
+}
+
+#materials-form:hover {
+  box-shadow: 0 12px 48px rgba(0, 180, 216, 0.2);
+  border-color: var(--color-accent-light);
+}
+
+#materials-form .form-section__row { gap: var(--spacing-xl); }
+#materials-form .form-section__left { gap: var(--spacing-lg); }
+#materials-form .form-group { gap: var(--spacing-sm); }
+
+#materials-form .form-group__label {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: var(--color-text-dark);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+}
+
+#materials-form .form-group__label::before {
+  content: '';
+  display: inline-block;
+  width: 3px;
+  height: 16px;
+  background: linear-gradient(180deg, var(--color-accent), var(--color-accent-hover));
+  border-radius: 2px;
+}
+
+#materials-form .form-group__input {
+  padding: var(--spacing-md);
+  border: 2px solid var(--color-border-light);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-base);
+  transition: all var(--transition-base);
+}
+
+#materials-form .form-group__input:focus {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 4px var(--color-accent-light);
+}
+
+#materials-form .form-section__actions {
+  display: flex;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-lg);
+  padding-top: var(--spacing-lg);
+  border-top: 1px solid var(--color-border-light);
+  justify-content: flex-start;
+}
+
+#add-subject-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-md) var(--spacing-lg);
+  background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-hover) 100%);
+  color: var(--color-primary);
+  border: none;
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-bold);
+  cursor: pointer;
+  transition: all var(--transition-base);
+  box-shadow: 0 4px 12px rgba(0, 180, 216, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+#add-subject-btn:hover {
+  box-shadow: 0 8px 24px rgba(0, 180, 216, 0.4);
+  transform: translateY(-2px);
+}
+
+.form-section__image {
+  width: 220px;
+  height: auto;
+  border-radius: var(--radius-md);
+  object-fit: cover;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  #materials-form .form-section__row { flex-direction: column; }
+  #materials-form .form-section__right { display: none; }
+}
+
+@media (max-width: 480px) {
+  #materials-form { padding: var(--spacing-md); }
+}
